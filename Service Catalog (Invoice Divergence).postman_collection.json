@@ -1,0 +1,479 @@
+{
+	"info": {
+		"_postman_id": "349932f1-6582-4100-854d-65d6c06bee85",
+		"name": "Service Catalog (Invoice Divergence)",
+		"description": "Allows you to use Service Catalog via REST<br><br><ul><li>Utilizar /api/sn_sc/servicecatalog/items/9ae98f1a1b284ad0f61c0dcbe54bcb7a para obter a lista de todos os campos do formulário de Divergência de Nota Fiscal</li><li>Utilizar /api/sn_sc/servicecatalog/items/9ae98f1a1b284ad0f61c0dcbe54bcb7a/submit_producer informando no body os campos e valores para a criação do registro.</li><li>Se houver anexo, utilizar o endpoint /api/now/attachment/file passando os valores de nome da tabela e sys_id retornados na chamada anterior.</li><li>Para atualização e tratativa de chamado, utilizar /api/now/table/x_raesa_suprimento_requisicao/{sys_id} e informar no body os campos que deseja alterar o valor.</li></ul>",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34351357"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "sn_sc",
+					"item": [
+						{
+							"name": "servicecatalog",
+							"item": [
+								{
+									"name": "items",
+									"item": [
+										{
+											"name": "{sys_id}",
+											"item": [
+												{
+													"name": "submit_producer",
+													"item": [
+														{
+															"name": "Invoice Divergence sys_id: <strong>9ae98f1a1b284ad0f61c0dcbe54bcb7a</strong>",
+															"request": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n    \"variables\": {\n      \"opened_by\": \"TR050845\",\n      \"requested_for\": \"TR050845\",\n      \"source\": \"RPA X\",\n      \"nfe_access_key_xml\": \"12345678912345678912345678912345678912345678\",\n      \"which_incoterm_should_be_changed_to\": \"\",\n      \"description\": \"TESTE Req\",\n      \"change_type\": \"\",\n      \"change_type_\": \"\",\n      \"gcm\": \"3d80c3971b6802d0edbd87bfe54bcb28\",\n      \"production_unit\": \"aviacao\",\n      \"tolerance_percentage\": \"\",\n      \"value_of_the_order\": \"biggest\",\n      \"purchase_order\": \"123\",\n      \"process_status\": \"\",\n      \"which_tax_changed\": \"\",\n      \"business_line\": \"invoice_divergence\",\n      \"company\": \"eab\",\n      \"change_field\": \"\",\n      \"category\": \"entry_material_invoice_nf_e\",\n      \"subcategory\": \"unit_value_change\",\n      \"cte_number\": \"132253446\",\n      \"what_do_you_want\": \"\",\n      \"buyer_s_name\": \"Teste 1\",\n      \"invoice_number\": \"12312312\"\n    }\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/sn_sc/servicecatalog/items/9ae98f1a1b284ad0f61c0dcbe54bcb7a/submit_producer",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"sn_sc",
+																		"servicecatalog",
+																		"items",
+																		"9ae98f1a1b284ad0f61c0dcbe54bcb7a",
+																		"submit_producer"
+																	]
+																},
+																"description": "Invoice Divergence sys_id: <strong>9ae98f1a1b284ad0f61c0dcbe54bcb7a</strong>"
+															},
+															"response": [
+																{
+																	"name": "ok",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"example\": {\n    \"variables\": {\n      \"opened_by\": \"alef.penteado@aoop.com.br\",\n      \"requested_for\": \"TR019582\",\n      \"source\": \"RPA X\",\n      \"nfe_access_key_xml\": \"12345678912345678912345678912345678912345678\",\n      \"which_incoterm_should_be_changed_to\": \"\",\n      \"description\": \"TESTE Req\",\n      \"change_type\": \"\",\n      \"change_type_\": \"\",\n      \"gcm\": \"3d80c3971b6802d0edbd87bfe54bcb28\",\n      \"production_unit\": \"aviacao\",\n      \"tolerance_percentage\": \"\",\n      \"value_of_the_order\": \"biggest\",\n      \"purchase_order\": \"123\",\n      \"process_status\": \"\",\n      \"which_tax_changed\": \"\",\n      \"business_line\": \"invoice_divergence\",\n      \"company\": \"eab\",\n      \"change_field\": \"\",\n      \"category\": \"entry_material_invoice_nf_e\",\n      \"subcategory\": \"unit_value_change\",\n      \"cte_number\": \"132253446\",\n      \"what_do_you_want\": \"\",\n      \"buyer_s_name\": \"Teste 1\",\n      \"invoice_number\": \"12312312\"\n    }\n  }\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/api/sn_sc/servicecatalog/items/:sys_id/submit_producer",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"sn_sc",
+																				"servicecatalog",
+																				"items",
+																				":sys_id",
+																				"submit_producer"
+																			],
+																			"variable": [
+																				{
+																					"key": "sys_id"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"example\": {\n    \"result\": {\n      \"sys_id\": \"8ad5be741b2d8250edbd87bfe54bcbca\",\n      \"number\": \"SUP0001178\",\n      \"record\": \"api/now/table/x_raesa_suprimento_requisicao/8ad5be741b2d8250edbd87bfe54bcbca\",\n      \"redirect_portal_url\": \"\",\n      \"parent_table\": \"task\",\n      \"redirect_url\": \"x_raesa_suprimento_requisicao.do?sys_id=8ad5be741b2d8250edbd87bfe54bcbca&sysparm_view=\",\n      \"table\": \"x_raesa_suprimento_requisicao\",\n      \"redirect_to\": \"generated_record\"\n    }\n  }\n}"
+																}
+															]
+														}
+													]
+												},
+												{
+													"name": "Retrieves details of a specific catalog item<br>Invoice Divergence sys_id: <strong>9ae98f1a1b284ad0f61c0dcbe54bcb7a</strong>",
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/sn_sc/servicecatalog/items/:sys_id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"sn_sc",
+																"servicecatalog",
+																"items",
+																":sys_id"
+															],
+															"variable": [
+																{
+																	"key": "sys_id",
+																	"value": "",
+																	"description": "(Required) "
+																}
+															]
+														},
+														"description": "Retrieves details of a specific catalog item<br>Invoice Divergence sys_id: <strong>9ae98f1a1b284ad0f61c0dcbe54bcb7a</strong>"
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/sn_sc/servicecatalog/items/:sys_id",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"sn_sc",
+																		"servicecatalog",
+																		"items",
+																		":sys_id"
+																	],
+																	"variable": [
+																		{
+																			"key": "sys_id"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "null"
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "now",
+					"item": [
+						{
+							"name": "attachment",
+							"item": [
+								{
+									"name": "file",
+									"item": [
+										{
+											"name": "Upload an attachment from a binary request",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/octet-stream"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "file",
+													"file": {}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/now/attachment/file",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"now",
+														"attachment",
+														"file"
+													]
+												},
+												"description": "Upload an attachment from a binary request"
+											},
+											"response": [
+												{
+													"name": "ok",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/octet-stream"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "file",
+															"file": {}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/now/attachment/file",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"now",
+																"attachment",
+																"file"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"example\": {\n    \"result\": {\n      \"size_bytes\": \"26898\",\n      \"file_name\": \"jorge.png\",\n      \"sys_mod_count\": \"2\",\n      \"average_image_color\": \"\",\n      \"image_width\": \"512\",\n      \"sys_updated_on\": \"2024-04-11 21:29:19\",\n      \"sys_tags\": \"\",\n      \"table_name\": \"x_raesa_suprimento_requisicao\",\n      \"sys_id\": \"104cc0091ba5c250edbd87bfe54bcbdd\",\n      \"image_height\": \"512\",\n      \"sys_updated_by\": \"APP-RPASUPRICRD\",\n      \"download_link\": \"https://raizendev.service-now.com/api/now/attachment/104cc0091ba5c250edbd87bfe54bcbdd/file\",\n      \"content_type\": \"image/png\",\n      \"sys_created_on\": \"2024-04-11 21:29:19\",\n      \"size_compressed\": \"26569\",\n      \"compressed\": \"true\",\n      \"state\": \"available\",\n      \"table_sys_id\": \"ee9a8c451ba5c250edbd87bfe54bcbb6\",\n      \"chunk_size_bytes\": \"700000\",\n      \"hash\": \"12101248f054a72db3f77c186fc10a89139ce0ed49a53e431100639955d893e5\",\n      \"sys_created_by\": \"APP-RPASUPRICRD\"\n    }\n  }\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "table",
+							"item": [
+								{
+									"name": "{tableName}",
+									"item": [
+										{
+											"name": "{sys_id}",
+											"item": [
+												{
+													"name": "Modify a record",
+													"request": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"example\": {\n    \"state\": \"3\",\n    \"comments\": \"Sua requisição foi concluída!\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/now/table/:tableName/:sys_id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"now",
+																"table",
+																":tableName",
+																":sys_id"
+															],
+															"variable": [
+																{
+																	"key": "tableName",
+																	"value": "",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "sys_id",
+																	"value": "",
+																	"description": "(Required) "
+																}
+															]
+														},
+														"description": "Modify a record"
+													},
+													"response": [
+														{
+															"name": "ok",
+															"originalRequest": {
+																"method": "PUT",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"example\": {\n    \"state\": \"3\",\n    \"comments\": \"Sua requisição foi concluída!\"\n  }\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/now/table/:tableName/:sys_id",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"now",
+																		"table",
+																		":tableName",
+																		":sys_id"
+																	],
+																	"variable": [
+																		{
+																			"key": "tableName"
+																		},
+																		{
+																			"key": "sys_id"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"example\": {\n    \"result\": {\n      \"parent\": \"\",\n      \"made_sla\": \"true\",\n      \"watch_list\": \"\",\n      \"criticality\": \"\",\n      \"upon_reject\": \"cancel\",\n      \"source\": \"\",\n      \"sys_updated_on\": \"2024-04-11 22:44:17\",\n      \"contention_action\": \"\",\n      \"task_effective_number\": \"SUP0001183\",\n      \"approval_history\": \"\",\n      \"skills\": \"\",\n      \"number\": \"SUP0001183\",\n      \"sys_updated_by\": \"alef.penteado@aoop.com.br\",\n      \"opened_by\": {\n        \"link\": \"https://raizendev.service-now.com/api/now/table/sys_user/fc67014a1bd582d0f61c0dcbe54bcbae\",\n        \"value\": \"fc67014a1bd582d0f61c0dcbe54bcbae\"\n      },\n      \"user_input\": \"\",\n      \"sys_created_on\": \"2024-04-11 21:17:56\",\n      \"sys_domain\": {\n        \"link\": \"https://raizendev.service-now.com/api/now/table/sys_user_group/global\",\n        \"value\": \"global\"\n      },\n      \"state\": \"3\",\n      \"root_cause_analysis\": \"\",\n      \"route_reason\": \"\",\n      \"sys_created_by\": \"APP-RPASUPRICRD\",\n      \"knowledge\": \"false\",\n      \"order\": \"\",\n      \"closed_at\": \"2024-04-11 22:44:17\",\n      \"cmdb_ci\": \"\",\n      \"delivery_plan\": \"\",\n      \"contract\": \"\",\n      \"impact\": \"\",\n      \"u_requested_for\": \"\",\n      \"active\": \"false\",\n      \"work_notes_list\": \"\",\n      \"business_service\": \"\",\n      \"priority\": \"4\",\n      \"sys_domain_path\": \"/\",\n      \"time_worked\": \"\",\n      \"expected_start\": \"\",\n      \"opened_at\": \"2024-04-11 21:17:56\",\n      \"business_duration\": \"\",\n      \"group_list\": \"\",\n      \"work_end\": \"\",\n      \"process_status\": \"demand_created\",\n      \"approval_set\": \"\",\n      \"purchasing_wallet\": \"\",\n      \"work_notes\": \"\",\n      \"universal_request\": \"\",\n      \"short_description\": \"\",\n      \"correlation_display\": \"\",\n      \"delivery_task\": \"\",\n      \"original_subcategory\": \"\",\n      \"work_start\": \"\",\n      \"assignment_group\": {\n        \"link\": \"https://raizendev.service-now.com/api/now/table/sys_user_group/2d1dfe531b6802d0edbd87bfe54bcb6f\",\n        \"value\": \"2d1dfe531b6802d0edbd87bfe54bcb6f\"\n      },\n      \"rnc_type\": \"\",\n      \"additional_assignee_list\": \"\",\n      \"description\": \"TESTE Req5\",\n      \"calendar_duration\": \"\",\n      \"close_notes\": \"\",\n      \"service_offering\": \"\",\n      \"sys_class_name\": \"x_raesa_suprimento_requisicao\",\n      \"closed_by\": {\n        \"link\": \"https://raizendev.service-now.com/api/now/table/sys_user/22b941e81be1ce10edbd87bfe54bcbbf\",\n        \"value\": \"22b941e81be1ce10edbd87bfe54bcbbf\"\n      },\n      \"follow_up\": \"\",\n      \"sys_id\": \"eda908051ba5c250edbd87bfe54bcb60\",\n      \"contact_type\": \"\",\n      \"urgency\": \"3\",\n      \"original_category\": \"\",\n      \"company\": {\n        \"link\": \"https://raizendev.service-now.com/api/now/table/core_company/eab\",\n        \"value\": \"eab\"\n      },\n      \"reassignment_count\": \"1\",\n      \"activity_due\": \"\",\n      \"assigned_to\": \"\",\n      \"comments\": \"\",\n      \"approval\": \"not requested\",\n      \"sla_due\": \"\",\n      \"catalog_item\": {\n        \"link\": \"https://raizendev.service-now.com/api/now/table/sc_cat_item/9ae98f1a1b284ad0f61c0dcbe54bcb7a\",\n        \"value\": \"9ae98f1a1b284ad0f61c0dcbe54bcb7a\"\n      },\n      \"comments_and_work_notes\": \"\",\n      \"corrective_action\": \"\",\n      \"due_date\": \"\",\n      \"sys_mod_count\": \"2\",\n      \"rnc_focal_point\": \"\",\n      \"sys_tags\": \"\",\n      \"agile_story\": \"\",\n      \"escalation\": \"0\",\n      \"upon_approval\": \"proceed\",\n      \"correlation_id\": \"\",\n      \"drop_files_here_click_upload\": \"\",\n      \"u_timespent\": \"\",\n      \"location\": \"\"\n    }\n  }\n}"
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "Test4321",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "APP-RPASUPRICRD",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://raizentest.service-now.com/"
+		}
+	]
+}
